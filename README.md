@@ -1,292 +1,188 @@
 # 📚 Learning Portal
 
-A full-stack **Learning Portal** built using **React.js, Node.js, Express.js, SQLite, and JWT Authentication**. This application enables students to securely access learning videos, create timestamp-based bookmarks, and continue learning from where they left off.
+A full-stack Learning Portal built using **React.js, Node.js, Express.js, SQLite, and JWT Authentication**. This application allows users to register, log in securely, browse educational videos, watch them, and create bookmarks at specific timestamps for easy revision.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo
 
-### 🔐 Authentication
-- User Registration
-- User Login
-- JWT-based Authentication
-- Protected Routes
-- Secure Logout
+### 🌐 Frontend
+**https://learning-portal-opal.vercel.app**
 
-### 🎥 Learning Portal
-- Browse learning videos
-- Search videos by title
-- Watch course videos
-- Responsive video player
-- Video thumbnails and descriptions
-
-### 🔖 Bookmark Feature
-- Create multiple bookmarks for a video
-- Save current video timestamp
-- Optional bookmark names
-- View all saved bookmarks
-- Resume video from bookmarked timestamp
-- Delete bookmarks
-
-### 🛡️ Content Protection
-- Watermark displaying logged-in user's email
-- Blur video when browser tab becomes inactive
-- Disable right-click to discourage unauthorized actions
-
-### 📊 Dashboard
-- Welcome dashboard
-- Total learning videos
-- Bookmark statistics
-- Continue Learning section
-
-### 📱 Responsive Design
-- Desktop Friendly
-- Tablet Friendly
-- Mobile Responsive
+### ⚙️ Backend API
+**https://learning-portal-api-4d8s.onrender.com**
 
 ---
 
-# 🛠 Tech Stack
+## 📌 Features
 
-## Frontend
+- 🔐 User Registration & Login
+- 🔑 JWT Authentication
+- 🎥 Browse Educational Videos
+- ▶️ Watch Videos
+- 🔖 Create Timestamp Bookmarks
+- 🗑️ Delete Bookmarks
+- 📱 Responsive User Interface
+- 💾 SQLite Database
+- 🌐 RESTful API Architecture
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
 - React.js
 - React Router DOM
 - Axios
 - CSS3
 - Vite
 
-## Backend
+### Backend
 - Node.js
 - Express.js
-
-## Database
 - SQLite3
-
-## Authentication
-- JWT (JSON Web Token)
+- JWT Authentication
 - bcrypt
+- CORS
+- dotenv
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-```
-Learning-Portal/
+```text
+Learning_portal
 │
-├── learning-portal/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── services/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── Server/
-│   ├── controllers/
-│   ├── routes/
-│   ├── uploads/
-│   ├── database.js
-│   ├── learning.db
+├── Server
+│   ├── middleware
+│   ├── routes
+│   ├── database
+│   ├── node_modules
 │   ├── index.js
-│   ├── .env
-│   └── package.json
+│   ├── package.json
+│   └── package-lock.json
+│
+├── learning-portal
+│   ├── public
+│   ├── src
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
 │
 └── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Installation
 
-## Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/learning-portal.git
-```
+### Clone Repository
 
 ```bash
-cd learning-portal
+git clone https://github.com/PN200203/Learning_portal.git
 ```
 
 ---
 
-# Backend Setup
+### Backend Setup
 
 ```bash
 cd Server
-```
-
-Install dependencies
-
-```bash
 npm install
+npm start
 ```
 
-Create a `.env` file
+Backend runs on:
 
-```env
-PORT=5000
-JWT_SECRET=your_secret_key
-```
-
-Run the backend
-
-```bash
-npm run dev
-```
-
-Backend runs on
-
-```
+```text
 http://localhost:5000
 ```
 
 ---
 
-# Frontend Setup
-
-Open another terminal
+### Frontend Setup
 
 ```bash
 cd learning-portal
-```
-
-Install dependencies
-
-```bash
 npm install
-```
-
-Start the frontend
-
-```bash
 npm run dev
 ```
 
-Frontend runs on
+Frontend runs on:
 
-```
+```text
 http://localhost:5173
 ```
 
 ---
 
-# 📡 API Endpoints
+## 🔐 Authentication
 
-## Authentication
+- JWT Token Authentication
+- Password Encryption using bcrypt
+- Protected Routes
+- Authorization Middleware
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | `/api/auth/register` | Register User |
-| POST | `/api/auth/login` | Login User |
+---
+
+## 📡 REST API Endpoints
+
+### Authentication
+
+| Method | Endpoint |
+|--------|----------|
+| POST | /api/auth/register |
+| POST | /api/auth/login |
 
 ### Videos
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| GET | `/api/videos` | Get All Videos |
-| GET | `/api/videos/:id` | Get Video By ID |
+| Method | Endpoint |
+|--------|----------|
+| GET | /api/videos |
+| GET | /api/videos/:id |
 
 ### Bookmarks
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | `/api/bookmarks` | Create Bookmark |
-| GET | `/api/bookmarks/:videoId` | Get Bookmarks |
-| DELETE | `/api/bookmarks/:id` | Delete Bookmark |
+| Method | Endpoint |
+|--------|----------|
+| GET | /api/bookmarks |
+| POST | /api/bookmarks |
+| DELETE | /api/bookmarks/:id |
 
 ---
 
-# 🗄 Database Schema
+## 🌍 Deployment
 
-## Users
+### Frontend (Vercel)
 
-| Field | Type |
-|--------|------|
-| id | INTEGER |
-| name | TEXT |
-| email | TEXT |
-| password | TEXT |
-| created_at | DATETIME |
+https://learning-portal-opal.vercel.app
 
-## Videos
+### Backend (Render)
 
-| Field | Type |
-|--------|------|
-| id | INTEGER |
-| title | TEXT |
-| description | TEXT |
-| videoUrl | TEXT |
-| thumbnail | TEXT |
-| duration | TEXT |
-| created_at | DATETIME |
-
-## Bookmarks
-
-| Field | Type |
-|--------|------|
-| id | INTEGER |
-| userId | INTEGER |
-| videoId | INTEGER |
-| bookmarkName | TEXT |
-| timestamp | INTEGER |
-| created_at | DATETIME |
+https://learning-portal-api-4d8s.onrender.com
 
 ---
 
-# 📖 Application Workflow
+## 📸 Project Screens
 
-```
-User Registration
-        │
-        ▼
-User Login
-        │
-        ▼
-Dashboard
-        │
-        ▼
-Browse Videos
-        │
-        ▼
-Watch Video
-        │
-        ▼
-Create Bookmark
-        │
-        ▼
-Resume Learning
-```
+- Login Page
+- Register Page
+- Home Dashboard
+- Video Player
+- Bookmarks Page
 
 ---
 
-# 🛡 Screenshot Protection
-
-Since web browsers cannot completely prevent screenshots, the following security measures have been implemented:
-
-- User email watermark displayed on the video player
-- Blur effect when the browser tab loses focus
-- Right-click disabled on the video page
-- JWT-protected routes
-
----
-
-# ⭐ Future Enhancements
+## 🎯 Future Enhancements
 
 - Admin Dashboard
-- Course Categories
 - Video Upload
+- Course Categories
 - Continue Watching
 - Watch History
-- Progress Tracking
-- Video Notes
+- User Profile
 - Dark Mode
-- Playback Speed Control
-- Notifications
+- Progress Tracking
+- Search & Filter Videos
+- Toast Notifications
 
----
