@@ -1,0 +1,315 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+.auth-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.auth-form{
+  width:350px;
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.auth-form h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.auth-form input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+}
+
+.auth-form button{
+  width:100%;
+  padding:12px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+.auth-form button:hover{
+  background:#1d4ed8;
+}
+
+.auth-form p{
+  margin-top:15px;
+  text-align:center;
+}
+
+/* Navbar */
+
+.navbar{
+    height:70px;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-links button{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    cursor:pointer;
+}
+
+/* Dashboard */
+
+.dashboard{
+    display:flex;
+}
+
+.sidebar{
+    width:220px;
+    min-height:calc(100vh - 70px);
+    background:#1f2937;
+    color:white;
+    padding:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:20px 0;
+}
+
+.dashboard-content{
+    flex:1;
+    padding:30px;
+    background:#f4f4f4;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:25px;
+}
+
+.video-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+}
+
+.video-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.video-card h3{
+    padding:10px;
+}
+
+.video-card p{
+    padding:0 10px 10px;
+}
+
+.video-card button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+.video-card button:hover{
+    background:#1d4ed8;
+}
+
+.video-wrapper{
+    display:flex;
+    gap:30px;
+    margin-top:20px;
+}
+
+.player-container{
+    flex:3;
+    position:relative;
+}
+
+.bookmark-panel{
+    flex:1;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.bookmark-panel input{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.bookmark-panel button{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+.bookmark-item{
+    border:1px solid #ddd;
+    padding:10px;
+    margin-bottom:15px;
+    border-radius:8px;
+}
+
+.watermark{
+    position:absolute;
+    top:20px;
+    right:20px;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    background:rgba(0,0,0,.4);
+    padding:6px 12px;
+    border-radius:5px;
+}
+
+.blur{
+    filter:blur(20px);
+}
+
+
+.profile-card{
+    width:450px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.profile-card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+.profile-info{
+    display:flex;
+    justify-content:space-around;
+    margin-top:30px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 450px;
+  padding: 12px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.4);
+}
+
+
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .dashboard-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .video-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .player-container {
+    width: 100%;
+  }
+
+  .bookmark-panel {
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .watermark {
+    font-size: 12px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  input {
+    width: 100%;
+  }
+}
